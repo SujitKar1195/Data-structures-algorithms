@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void isSorted(int *a,int n){
+int isSorted(int *a,int n){
     for(int i=0;i<n-1;i++)
     {
         if(a[i]>a[i+1]){
-            cout<<"Array is not sorted";
-            return;
+            
+            return false;
         }
     }
-    cout<<"Array is sorted";
+    return true;
 }
 
 int main()
@@ -23,7 +23,12 @@ int main()
     {
         cin>>a[i];
     }
-    isSorted(a,n);
+    if(isSorted(a,n)){
+        cout<<"Array is sorted\n";
+    }
+    else{
+        cout<<"array is not sorted"<<endl;
+    }
 
 
     return 0;
