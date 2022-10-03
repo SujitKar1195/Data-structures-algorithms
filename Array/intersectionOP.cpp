@@ -79,7 +79,7 @@ int main()
     cout<<"after intersection operation : \n";
     for(int i=0;i<k;i++)
     {
-        cout<<newArr[i]<<" ";
+        cout<<newArr[i]<<" "; 
     }
     cout<<endl;
     }
