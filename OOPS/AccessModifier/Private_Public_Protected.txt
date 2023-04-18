@@ -1,0 +1,4 @@
+           public derivation       private derivation      protected derivation
+1.public    public                  private                 protected
+2.private   not inherited           not inherited           not inherited
+3.protected protected               private                 protected

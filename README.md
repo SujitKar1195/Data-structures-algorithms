@@ -1,6 +1,7 @@
+
 # DSA_Codes_With_C++
 
-#moto:HelpOthers.Action=Reaction
+#moto:HelpOthers.Action<=>Reaction
 
 This a repository created on the day of 10th sept 2022.
 Welcome to DSA with using c++ language.
