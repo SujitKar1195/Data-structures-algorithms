@@ -16,5 +16,12 @@ int main()
     else
         cout << "not present\n";
 
+    // if element is not present then index will be size of the array
+    auto it = lower_bound(v.begin(), v.end(), key);
+    cout << it - v.begin() << endl; // first occurence index
+
+    it = upper_bound(v.begin(), v.end(), key);
+    cout << it - v.begin() << endl; // last occurence index
+
     return 0;
 }
