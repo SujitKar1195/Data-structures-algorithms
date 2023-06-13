@@ -25,6 +25,29 @@ void insert(int *a, int n)
     a[i] = temp;
 }
 
+int Parent(int *a, int index, int n)
+{
+
+    if (index <= 1 || index > n)
+    {
+        return -1;
+    }
+    return index / 2;
+}
+
+int leftChild(int *a, int index, int n)
+{
+    if (index <= 0 || index >= (n - 1))
+        return -1;
+    return 2 * index;
+}
+int rightChild(int *a, int index, int n)
+{
+    if (index <= 0 || index >= (n - 1))
+        return -1;
+    return 2 * index + 1;
+}
+
 int main()
 {
     int n;
@@ -38,9 +61,43 @@ int main()
 
     for (int i = 2; i <= n; i++)
     {
-        insert(a, i);
+        insert(a, i); // Heap creation
     }
 
+    // Find parent of current node = i/2;
+    int index;
+    cout << "Enter index for searching parent: ";
+    cin >> index;
+
+    int i = Parent(a, index, n); // parent node index
+
+    if (i == -1)
+        cout << "Invalid Index\n";
+    else
+        cout << "Parent Node is : " << a[i] << endl;
+
+    //
+
+    // Left child = 2 * i;
+    cout << "Enter Index to find LeftChild:\n";
+    cin >> index;
+    i = leftChild(a, index, n);
+    if (i == -1)
+        cout << "Invalid index\n";
+    else
+        cout << "Left Child is : " << a[i] << endl;
+
+    //
+    // Right child = 2*i + 1;
+    cout << "Enter Index to find rightChild:\n";
+    cin >> index;
+    i = rightChild(a, index, n);
+    if (i == -1)
+        cout << "Invalid index\n";
+    else
+        cout << "Right Child is : " << a[i] << endl;
+    //
+    cout << "Heap elements: ";
     for (int i = 1; i <= n; i++)
         cout << a[i] << " ";
     cout << endl;
