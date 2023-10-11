@@ -1,4 +1,4 @@
-/*
+
 Discussion:
     Hashing is a searching technique in which inserting,deletion and searching will take constant time(O(n)) average , in worst case time complexity of hashing is still O(n).
 
@@ -22,20 +22,13 @@ Discussion:
                             Number of elements in Hash table
             Load factor = ------------------------------------
                                     hash table size
-    3. Collisions:
+    3. Collisions: many key points to a single block then collision occurs.
 
+    4. Collision Resolution Techniques:
+        i. Open Hashing(Closed Addressing)
+            A. Separate Chaining.
+        ii. Closed Hashing(Open Addressing)
+            A. Linear Probing
+            B. Quadratic Probing
+            C.Double Hashing
 
-
-
-
-
-*/
-
-#include <iostream>
-using namespace std;
-
-int main()
-{
-
-    return 0;
-}
