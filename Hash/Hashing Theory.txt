@@ -32,3 +32,19 @@ Discussion:
             B. Quadratic Probing
             C.Double Hashing
 
+
+
+A. Linear Probing:
+
+   Insert: 
+   
+   In Linear Probing we insert key at the index where it should reside((key%10)) , if the index is already occupied then it will insert the key at next index where no key is available and If there  is no place to insert then will have to look from starting index(Cyclic insert).
+
+   Search:
+
+    Search in Linear Probing is simple just go to the index which is given by the hash function and check whether the key is present or not. If presernt return the index otherwise search for next index until the last index or till the non vacant index.
+
+    
+
+
+
