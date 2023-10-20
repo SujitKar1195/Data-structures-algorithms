@@ -28,7 +28,7 @@ void enqueue(Queue *q, int x)
     else
     {
         q->rear++;
-        q->q[q->rear] = x;
+        q->q[q->rear] = x;   
     }
 }
 
