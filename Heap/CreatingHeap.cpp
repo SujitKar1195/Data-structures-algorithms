@@ -1,18 +1,18 @@
 /*
 There are two types of Heap.
-1. Max Heap: here current node will be of greater value than it's descendents
+1. Max Heap: here current node value will be of greater value than it's descendents
 2. Min Heap: here current node will be of lesser value than  it's descendents
 
 In heap, we don't use Zeroth index.
-Indexing will start from 1 onward;
+Indexing  starts from 1 onward;
 */
 
 // In this section we will use Max Heap.
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void insert(int *a, int n)
+void insert(vector<int> &a, int n)
 {
     int temp = a[n];
     int i = n;
@@ -25,7 +25,7 @@ void insert(int *a, int n)
     a[i] = temp;
 }
 
-int Parent(int *a, int index, int n)
+int Parent(vector<int> &a, int index, int n)
 {
 
     if (index <= 1 || index > n)
@@ -35,13 +35,13 @@ int Parent(int *a, int index, int n)
     return index / 2;
 }
 
-int leftChild(int *a, int index, int n)
+int leftChild(vector<int> &a, int index, int n)
 {
     if (index <= 0 || index >= (n - 1))
         return -1;
     return 2 * index;
 }
-int rightChild(int *a, int index, int n)
+int rightChild(vector<int> &a, int index, int n)
 {
     if (index <= 0 || index >= (n - 1))
         return -1;
@@ -53,17 +53,25 @@ int main()
     int n;
     cout << "Enter size : ";
     cin >> n;
-    int a[n + 1]; // creating array
+    vector<int> a(n + 1); // creating array
     for (int i = 1; i <= n; i++)
     {
         cin >> a[i];
     }
 
-    for (int i = 2; i <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
         insert(a, i); // Heap creation
     }
 
+    for (int i = 1; i <= n; i++)
+    {
+        cout << a[i] << " ";
+    }
+
+    cout << endl;
+
+    /*
     // Find parent of current node = i/2;
     int index;
     cout << "Enter index for searching parent: ";
@@ -101,6 +109,7 @@ int main()
     for (int i = 1; i <= n; i++)
         cout << a[i] << " ";
     cout << endl;
+    */
 
     return 0;
 }

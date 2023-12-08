@@ -27,7 +27,7 @@ int Delete(int a[], int n)
         if (a[i] < a[j])
         {
             temp = a[i];
-            a[i] = a[j];
+            a[i] = a[j]; 
             a[j] = temp;
             i = j;
             j = 2 * j;
