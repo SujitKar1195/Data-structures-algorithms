@@ -1,7 +1,7 @@
 /*
 <---Welcome to Dynamic Programming-->
 
-In the fibonacci program, if we use basic recursion to solve then it is going to take O(2^n) times and the space complexity will be of O(n) times.
+In the fibonacci program, if we use basic recursion to solve then it is going to take O(2^n) time and the space complexity will be of O(n) time.
 
 Time taking by this program is not very impressive. Like for Fib(50) it can be taken more time in general purpose computers.
 
