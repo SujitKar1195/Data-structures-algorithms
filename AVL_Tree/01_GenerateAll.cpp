@@ -1,7 +1,7 @@
-// LL-rotation
-// LR-rotation
-// RR-rotation
-// RL-rotation
+// LL-Rotation
+// LR-Rotation
+// RR-Rotation
+// RL-Rotation
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -41,88 +41,80 @@ int BalanceFactor(Node *p)
     return (hl - hr);
 }
 
-/*Left Left Rotation*/
 Node *LLRotation(Node *p)
-{
+    {
+        Node *pl = p->lChild;
+        Node *plr = pl->rChild;
+    
+        pl->rChild = p;
+        p->lChild = plr;
+    
+        // Update height
+        p->height = NodeHeight(p);
+        pl->height = NodeHeight(pl);
 
-    Node *pl = p->lChild;
-    Node *plr = pl->rChild;
-    pl->rChild = p;
-    p->lChild = plr;
+        return pl;
+    }
 
-    // Change height of p , pl;
-    p->height = NodeHeight(p);
-    pl->height = NodeHeight(pl);
+/*lChild rChild Rotation*/
+    Node *LRRotation(Node *p)
+    {
+    
+        Node *pl = p->lChild;
+        Node *plr = pl->rChild;
+    
+        pl->rChild = plr->lChild;
+        p->lChild = plr->rChild;
+    
+        plr->lChild = pl;
+        plr->rChild = p;
+    
+        // Update height
+        pl->height = NodeHeight(pl);
+        p->height = NodeHeight(p);
+        plr->height = NodeHeight(plr);
+    
+        
+        return plr;
+    }
 
-    if (root == p)
-        root = pl;
-    return pl;
-}
-
-/*Left Right Rotation*/
-Node *LRRotation(Node *p)
-{
-
-    Node *pl = p->lChild;
-    Node *plr = pl->rChild;
-
-    pl->rChild = plr->lChild;
-    p->lChild = plr->rChild;
-
-    plr->lChild = pl;
-    plr->rChild = p;
-
-    // change new Height for p, pl, plr
-    p->height = NodeHeight(p);
-    plr->height = NodeHeight(plr);
-    pl->height = NodeHeight(pl);
-
-    if (root == p)
-        root = plr;
-    return plr;
-}
-
-/*Right Right Rotation*/
-Node *RRRotation(Node *p)
-{
-    Node *pr = p->rChild;
-    Node *prr = pr->rChild;
-
-    p->rChild = pr->lChild;
-    pr->lChild = p;
-    pr->rChild = prr;
-
-    // change height for p, pr
-    p->height = NodeHeight(p);
-    pr->height = NodeHeight(pr);
-
-    if (root == p)
-        root = pr;
-
-    return pr;
-}
-
-/*Right Left Rotation*/
-Node *RLRotation(Node *p)
-{
-    Node *pr = p->rChild;
-    Node *prl = pr->lChild;
-
-    p->rChild = prl->lChild;
-    pr->lChild = prl->rChild;
-
-    prl->lChild = p;
-    prl->rChild = pr;
-
-    // change height for p, prl, pr;
-    p->height = NodeHeight(p);
-    pr->height = NodeHeight(pr);
-    prl->height = NodeHeight(prl);
-
-    if (root == p)
-        root = prl;
-    return prl;
-}
+/*rChild rChild Rotation*/
+    Node *RRRotation(Node *p)
+    {
+        Node *pr = p->rChild;
+        Node *prl = pr->lChild;
+    
+        pr->lChild = p;
+        p->rChild = prl;
+    
+        // Update height
+        p->height = NodeHeight(p);
+        pr->height = NodeHeight(pr);
+    
+        
+        return pr;
+    }
+    
+    /*rChild lChild Rotation*/
+    Node *RLRotation(Node *p)
+    {
+        Node *pr = p->rChild;
+        Node *prl = pr->lChild;
+    
+        pr->lChild = prl->rChild;
+        p->rChild = prl->lChild;
+    
+        prl->rChild = pr;
+        prl->lChild = p;
+    
+        // Update height
+        pr->height = NodeHeight(pr);
+        p->height = NodeHeight(p);
+        prl->height = NodeHeight(prl);
+    
+    
+        return prl;
+    }
 
 /*Recursive Insertion In AVL Tree*/
 Node *rInsert(Node *p, int key)
