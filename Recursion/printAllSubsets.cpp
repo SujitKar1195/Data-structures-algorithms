@@ -20,7 +20,7 @@ vector<string> returnWithUsingNoArgumentAnsVector(string tem, string s)
 
 void printAllSubsets(string s, string temp)
 {
-    
+
     if (s.empty())
     {
         if (temp.size() > 0)
